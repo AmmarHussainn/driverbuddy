@@ -98,7 +98,7 @@ export default function Footer() {
               <h3 className="text-white text-xl font-bold">Haul Nova</h3>
             </div>
             <p className="text-gray-400 mb-6 leading-relaxed">
-              Revolutionizing the $800B trucking industry with AI voice agents that automate driver outreach and scale dispatching operations.
+             Reliable truck dispatching services to keep your business moving forward.
             </p>
           </div>
 
