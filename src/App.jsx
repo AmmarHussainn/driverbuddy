@@ -1,54 +1,34 @@
+// src/App.jsx
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
 import Footer from './components/Footer';
-import FeaturesBanner from './components/FeaturesBanner';
-import CTA from './components/CTA';
-import Pricing from './components/Pricing';
-import TestimonialSection from './components/TestimonialSection';
-import Demo from './components/Demo';
-import Solution from './components/Solution';
-import Problem from './components/Problem';
-import Stats from './components/Stats';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
+
+
+import Home from './pages/home';
+import ContactUsPage from './pages/ContactUsPage';
+import PricingPage from './pages/PricingPage';
 
 export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <div className="bg-gray-50 font-sans">
-      {/* Navigation */}
-      <Navbar/>
+    <Router>
+      <div className="bg-gray-50 font-sans">
+        {/* Navbar visible on all pages */}
+        <Navbar />
 
-      {/* Hero Section */}
-     <Hero/>
+        {/* Define Routes */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/contact" element={<ContactUsPage />} />
+          <Route path="/pricing" element={<PricingPage />} />
+          <Route path="*" element={<div className="text-center py-20">404 - Page Not Found</div>} />
+        </Routes>
 
-      {/* Stats Section */}
-    <Stats/>
-
-      {/* Problem Section */}
-       <Problem/>
-
-      {/* Solution Section */}
-     
-      <Solution />
-
-      {/* Demo Section */}
-     <Demo/>
-
-      {/* Testimonial Section */}
-     <TestimonialSection/>
-
-      {/* Pricing Section */}
-     <Pricing/>
-
-      {/* CTA Section */}
-     <CTA/>
-
-      {/* Features Banner */}
-     <FeaturesBanner/>
-
-      {/* Footer */}
-     <Footer/>
-    </div>
+        {/* Footer visible on all pages */}
+        <Footer />
+      </div>
+    </Router>
   );
 }

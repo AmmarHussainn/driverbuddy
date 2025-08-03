@@ -140,16 +140,7 @@ export default function Hero() {
           </div>
 
           {/* Trust Indicators */}
-          <div className={`mt-16 transform transition-all duration-1000 delay-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-            <p className="text-sm text-gray-400 mb-6">Trusted by industry leaders</p>
-            <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
-              {['TruckCorp', 'LogiTech', 'FreightFlow', 'CargoMax'].map((company, index) => (
-                <div key={index} className="text-lg font-semibold text-gray-300 hover:text-white transition-colors duration-300 cursor-pointer">
-                  {company}
-                </div>
-              ))}
-            </div>
-          </div>
+         
         </div>
       </div>
 
