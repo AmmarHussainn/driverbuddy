@@ -43,7 +43,7 @@ const Home = () => {
      <FeaturesBanner/>
 
       {/* Footer */}
-     <Footer/>
+   
 
    
    </>
