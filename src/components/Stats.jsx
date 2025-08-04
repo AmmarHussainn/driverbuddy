@@ -250,55 +250,7 @@ export default function Stats() {
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <div className={`text-center mt-16 transform transition-all duration-1000 delay-1000 ${
-          isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-        }`}>
-          <div 
-            className="inline-flex items-center space-x-6 bg-white rounded-2xl p-6 shadow-xl border"
-            style={{ borderColor: 'rgba(37, 42, 49, 0.1)' }}
-          >
-            <div className="flex -space-x-2">
-              {[...Array(4)].map((_, i) => (
-                <div
-                  key={i}
-                  className="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center text-white font-bold text-sm"
-                  style={{ 
-                    backgroundColor: i % 2 === 0 ? '#602fc9' : '#faa61b'
-                  }}
-                >
-                  {String.fromCharCode(65 + i)}
-                </div>
-              ))}
-            </div>
-            <div className="text-left">
-              <p 
-                className="text-sm font-semibold"
-                style={{ color: '#252a31' }}
-              >
-                Join 150+ satisfied carriers
-              </p>
-              <p 
-                className="text-xs"
-                style={{ color: '#252a31', opacity: 0.6 }}
-              >
-                Experience the AI difference today
-              </p>
-            </div>
-            <button 
-              className="text-white px-8 py-3 rounded-xl font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300"
-              style={{ backgroundColor: '#faa61b' }}
-              onMouseEnter={(e) => {
-                e.target.style.backgroundColor = '#e8951a';
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.backgroundColor = '#faa61b';
-              }}
-            >
-              Get Started →
-            </button>
-          </div>
-        </div>
+       
       </div>
 
       <style jsx>{`
