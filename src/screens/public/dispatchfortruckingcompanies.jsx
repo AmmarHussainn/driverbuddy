@@ -2,8 +2,7 @@ import React from 'react';
 import Navbar from '../../components/navbar';
 import Footer from '../../components/footer';
 import FleetPrioritySection from '../../components/FleetPrioritySection';
-import WhyChooseUsSection from '../../components/WhyChooseUsSection';
-import FAQSection from '../../components/faqsections';
+
 import Images from '../../assets/Images';
 
 const Dispatchfortruckingcompanies = () => {
@@ -56,8 +55,7 @@ const Dispatchfortruckingcompanies = () => {
       <FleetPrioritySection data={fleetPriorityData}/>
 
 
-      <WhyChooseUsSection/>
-      <FAQSection/>
+     
       <Footer />
     </>
   );

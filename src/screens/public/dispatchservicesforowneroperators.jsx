@@ -1,8 +1,7 @@
 import React from 'react'
 import Navbar from '../../components/navbar'
 import Footer from '../../components/footer'
-import FAQSection from '../../components/faqsections'
-import WhyChooseUsSection from '../../components/WhyChooseUsSection'
+
 import FleetPrioritySection from '../../components/FleetPrioritySection'
 import Images from '../../assets/Images'
 
@@ -54,8 +53,7 @@ const Dispatchservicesforowneroperators = () => {
       <FleetPrioritySection data={fleetPriorityData}/>
 
 
-      <WhyChooseUsSection/>
-      <FAQSection/>
+     
       <Footer />
    </>
   )
