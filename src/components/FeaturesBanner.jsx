@@ -31,7 +31,7 @@ const FeaturesBanner = () => {
     },
     {
       icon: "⚡",
-      title: "50% Time Savings",
+      title: "75% Time Savings",
       subtitle: "Guaranteed results",
       primary: false
     },

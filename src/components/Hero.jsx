@@ -141,7 +141,7 @@ export default function Hero() {
             </span>{' '}
             truck drivers for dispatching agencies,{' '}
             <span className="font-semibold" style={{ color: '#602fc9' }}>
-              cutting outreach time by 50%
+              cutting outreach time by 75%
             </span>{' '}
             while delivering results you never thought possible.
           </p>
@@ -149,8 +149,8 @@ export default function Hero() {
           {/* Stats Row */}
           <div className={`flex flex-wrap justify-center items-center gap-8 md:gap-16 mb-12 transform transition-all duration-1000 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
             {[
-              { number: '50%', label: 'Time Saved' },
-              { number: '300+', label: 'Happy Clients' },
+              { number: '75%', label: 'Time Saved' },
+             
               { number: '24/7', label: 'AI Availability' }
             ].map((stat, index) => (
               <div key={index} className="text-center group cursor-pointer">

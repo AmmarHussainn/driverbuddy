@@ -171,7 +171,7 @@ export default function Problem() {
             <span className="font-bold" style={{ color: '#602fc9' }}>
               slow, costly, and crushing your growth
             </span>
-            . In the $800 billion trucking industry,{' '}
+            . In the $900 billion trucking industry,{' '}
             <span className="font-bold" style={{ color: '#faa61b' }}>
               you can't afford to lag behind
             </span>

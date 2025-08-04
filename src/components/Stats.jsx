@@ -13,7 +13,7 @@ export default function Stats() {
   const statsData = [
     {
       id: 'carriers',
-      value: 150,
+      value: 10,
       suffix: '+',
       label: 'Carriers Onboarded',
       icon: '🚛',
