@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Solution() {
+  const navigate = useNavigate();
   const [isVisible, setIsVisible] = useState(false);
   const [activeFeature, setActiveFeature] = useState(0);
   const [animatedValues, setAnimatedValues] = useState({
@@ -399,7 +401,8 @@ export default function Solution() {
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <button 
-                  className="group relative px-8 py-4 text-lg font-bold rounded-2xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 overflow-hidden"
+                 onClick={() => navigate('/contactus')}
+                  className="group relative cursor-pointer px-8 py-4 text-lg font-bold rounded-2xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 overflow-hidden"
                   style={{ backgroundColor: '#faa61b', color: '#f9f9f9' }}
                 >
                   <span className="relative z-10 flex items-center space-x-3">
@@ -410,7 +413,8 @@ export default function Solution() {
                 </button>
                 
                 <button 
-                  className="px-8 py-4 backdrop-blur-sm border-2 font-bold text-lg rounded-2xl transform hover:scale-105 transition-all duration-300"
+                 onClick={() => navigate('/contactus')}
+                  className="px-8 py-4 cursor-pointer backdrop-blur-sm border-2 font-bold text-lg rounded-2xl transform hover:scale-105 transition-all duration-300"
                   style={{ 
                     backgroundColor: 'rgba(249, 249, 249, 0.2)',
                     borderColor: 'rgba(249, 249, 249, 0.3)',

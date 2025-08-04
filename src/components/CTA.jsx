@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function CTA() {
+  const navigate = useNavigate();
+
   const [isVisible, setIsVisible] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
@@ -115,7 +118,10 @@ export default function CTA() {
 
           {/* CTA Buttons */}
           <div className={`flex flex-col sm:flex-row gap-6 justify-center items-center max-w-lg mx-auto transform transition-all duration-1000 delay-800 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-            <button className="group relative w-full sm:w-auto px-8 py-4 font-bold rounded-xl shadow-2xl transform hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+            <button
+             onClick={() => navigate('/contactus')}
+            
+            className="group relative cursor-pointer w-full sm:w-auto px-8 py-4 font-bold rounded-xl shadow-2xl transform hover:-translate-y-1 transition-all duration-300 overflow-hidden"
             style={{ 
               background: 'linear-gradient(135deg, #602fc9, #faa61b)',
               color: 'white',
@@ -135,7 +141,9 @@ export default function CTA() {
               <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 blur transition-opacity duration-300 -z-10" style={{ background: 'linear-gradient(135deg, #602fc9, #faa61b)' }}></div>
             </button>
 
-            <button className="group relative w-full sm:w-auto px-8 py-4 font-bold rounded-xl backdrop-blur-sm transform hover:-translate-y-1 transition-all duration-300 overflow-hidden border-2"
+            <button
+            onClick={() => navigate('/contactus')}
+            className="group relative w-full cursor-pointer sm:w-auto px-8 py-4 font-bold rounded-xl backdrop-blur-sm transform hover:-translate-y-1 transition-all duration-300 overflow-hidden border-2"
             style={{ 
               backgroundColor: 'rgba(249, 249, 249, 0.1)',
               color: '#f9f9f9',

@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const FeaturesBanner = () => {
+  const navigate = useNavigate();
   const [isVisible, setIsVisible] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
@@ -170,7 +172,9 @@ const FeaturesBanner = () => {
             Ready to transform your agency? 
             <span style={{ color: '#602fc9' }}> Join thousands</span> of successful agencies today.
           </p>
-          <button className="group px-8 py-4 rounded-xl font-bold text-lg shadow-xl transform hover:-translate-y-1 transition-all duration-300 text-white"
+          <button
+           onClick={() => navigate('/contactus')}
+          className=" cursor-pointer group px-8 py-4 rounded-xl font-bold text-lg shadow-xl transform hover:-translate-y-1 transition-all duration-300 text-white"
           style={{ background: 'linear-gradient(135deg, #602fc9, #faa61b)' }}>
             <span className="flex items-center justify-center">
               Start Your Free Trial

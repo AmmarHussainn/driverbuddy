@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Hero() {
+  const navigate = useNavigate();
   const [isVisible, setIsVisible] = useState(false);
   const [currentWord, setCurrentWord] = useState(0);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -27,7 +29,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <div className="relative min-h-screen overflow-hidden" style={{ backgroundColor: '#f9f9f9' }}>
+    <div className="relative min-h-screen  mt-20 md:mt-0 overflow-hidden" style={{ backgroundColor: '#f9f9f9' }}>
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
         {/* Floating Particles */}
@@ -111,7 +113,7 @@ export default function Hero() {
               className="text-3xl md:text-5xl lg:text-6xl"
               style={{ color: '#602fc9' }}
             >
-              with AI Magic ✨
+              with AI  ✨
             </span>
           </h1>
 
@@ -171,7 +173,8 @@ export default function Hero() {
           {/* CTA Buttons */}
           <div className={`flex flex-col sm:flex-row justify-center items-center gap-6 transform transition-all duration-1000 delay-800 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
             <button 
-              className="group relative px-12 py-4 text-white text-lg font-bold rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300 overflow-hidden"
+             onClick={() => navigate('/contactus')}
+              className="cursor-pointer group relative px-12 py-4 text-white text-lg font-bold rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300 overflow-hidden"
               style={{ 
                 backgroundColor: '#602fc9',
                 boxShadow: '0 25px 50px -12px rgba(96, 47, 201, 0.25)'
@@ -187,7 +190,8 @@ export default function Hero() {
             </button>
             
             <button 
-              className="group px-12 py-4 bg-transparent border-2 text-lg font-bold rounded-full transform hover:scale-105 transition-all duration-300 backdrop-blur-sm"
+             onClick={() => navigate('/contactus')}
+              className="cursor-pointer group px-12 py-4 bg-transparent border-2 text-lg font-bold rounded-full transform hover:scale-105 transition-all duration-300 backdrop-blur-sm"
               style={{ 
                 borderColor: '#252a31',
                 color: '#252a31'
