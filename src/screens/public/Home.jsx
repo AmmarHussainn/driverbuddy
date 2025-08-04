@@ -1,13 +1,14 @@
 import React from 'react'
-import Footer from '../components/Footer'
-import FeaturesBanner from '../components/FeaturesBanner'
-import CTA from '../components/CTA'
-import Pricing from '../components/Pricing'
-import Solution from '../components/Solution'
-import Problem from '../components/Problem'
-import Stats from '../components/Stats'
-import Hero from '../components/Hero'
-import Navbar from '../components/Navbar'
+
+import FeaturesBanner from '../../components/FeaturesBanner'
+import CTA from '../../components/CTA'
+import Pricing from '../../components/Pricing'
+import Solution from '../../components/Solution'
+import Problem from '../../components/Problem'
+import Stats from '../../components/Stats'
+import Hero from '../../components/Hero'
+import Navbar from '../../components/Navbar'
+import Footer from '../../components/Footer'
 
 const Home = () => {
   return (
@@ -43,7 +44,7 @@ const Home = () => {
      <FeaturesBanner/>
 
       {/* Footer */}
-   
+    <Footer/>
 
    
    </>

@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
 export default function Footer() {
   const [isVisible, setIsVisible] = useState(false);
-  const [hoveredSocial, setHoveredSocial] = useState(null);
+  const [hoveredLink, setHoveredLink] = useState(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -21,49 +20,6 @@ export default function Footer() {
     return () => observer.disconnect();
   }, []);
 
-  const socialIcons = [
-    {
-      name: 'LinkedIn',
-      icon: (
-        <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-          <path d="..." />
-        </svg>
-      ),
-      href: 'https://linkedin.com',
-      color: 'from-blue-600 to-blue-400',
-    },
-    {
-      name: 'Twitter',
-      icon: (
-        <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-          <path d="..." />
-        </svg>
-      ),
-      href: 'https://twitter.com',
-      color: 'from-sky-500 to-blue-500',
-    },
-    {
-      name: 'YouTube',
-      icon: (
-        <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-          <path d="..." />
-        </svg>
-      ),
-      href: 'https://youtube.com',
-      color: 'from-red-600 to-red-400',
-    },
-    {
-      name: 'GitHub',
-      icon: (
-        <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-          <path d="..." />
-        </svg>
-      ),
-      href: 'https://github.com',
-      color: 'from-gray-600 to-gray-400',
-    },
-  ];
-
   const quickLinks = [
     { name: 'Home', href: '/' },
     { name: 'Pricing', href: '/pricing' },
@@ -73,14 +29,18 @@ export default function Footer() {
   return (
     <footer
       id="footer"
-      className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-black overflow-hidden"
+      className="relative overflow-hidden"
+      style={{ background: 'linear-gradient(135deg, #252a31, #1a1f25)' }}
     >
       {/* Background */}
       <div className="absolute inset-0">
-        <div className="absolute top-0 left-0 w-72 h-72 bg-blue-600 rounded-full blur-3xl opacity-10 animate-pulse"></div>
-        <div className="absolute bottom-0 right-0 w-72 h-72 bg-purple-600 rounded-full blur-3xl opacity-10 animate-pulse animation-delay-1000"></div>
-        <div className="absolute top-1/2 left-1/3 w-96 h-96 bg-cyan-600 rounded-full blur-3xl opacity-5"></div>
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
+        <div className="absolute top-0 left-0 w-72 h-72 rounded-full blur-3xl opacity-8 animate-pulse" style={{ backgroundColor: '#602fc9' }}></div>
+        <div className="absolute bottom-0 right-0 w-72 h-72 rounded-full blur-3xl opacity-8 animate-pulse animation-delay-1000" style={{ backgroundColor: '#faa61b' }}></div>
+        <div className="absolute top-1/2 left-1/3 w-96 h-96 rounded-full blur-3xl opacity-4" style={{ background: 'linear-gradient(135deg, #602fc9, #faa61b)' }}></div>
+        <div className="absolute inset-0 opacity-5" style={{ 
+          backgroundImage: 'linear-gradient(rgba(249,249,249,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(249,249,249,0.1) 1px, transparent 1px)',
+          backgroundSize: '50px 50px'
+        }}></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
@@ -92,13 +52,14 @@ export default function Footer() {
             }`}
           >
             <div className="flex items-center mb-4">
-              <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center mr-3">
-                <span className="text-white font-bold text-lg">H</span>
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center mr-3"
+              style={{ background: 'linear-gradient(135deg, #602fc9, #faa61b)' }}>
+                <span className="font-bold text-lg" style={{ color: '#f9f9f9' }}>H</span>
               </div>
-              <h3 className="text-white text-xl font-bold">Haul Nova</h3>
+              <h3 className="text-xl font-bold" style={{ color: '#f9f9f9' }}>Haul Nova</h3>
             </div>
-            <p className="text-gray-400 mb-6 leading-relaxed">
-             Reliable truck dispatching services to keep your business moving forward.
+            <p className="mb-6 leading-relaxed" style={{ color: '#f9f9f9', opacity: 0.7 }}>
+              Reliable truck dispatching services to keep your business moving forward.
             </p>
           </div>
 
@@ -108,20 +69,30 @@ export default function Footer() {
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
             }`}
           >
-            <h3 className="text-white text-lg font-bold mb-6 flex items-center">
-              <span className="w-2 h-2 bg-blue-500 rounded-full mr-3 animate-pulse"></span>
+            <h3 className="text-lg font-bold mb-6 flex items-center" style={{ color: '#f9f9f9' }}>
+              <span className="w-2 h-2 rounded-full mr-3 animate-pulse" style={{ backgroundColor: '#602fc9' }}></span>
               Quick Links
             </h3>
             <ul className="space-y-3">
               {quickLinks.map(({ name, href }, idx) => (
                 <li key={idx}>
-                  <Link
-                    to={href}
-                    className="group text-gray-400 hover:text-white transition-all duration-300 flex items-center"
+                  <a
+                    href={href}
+                    className="group transition-all duration-300 flex items-center"
+                    style={{ color: hoveredLink === idx ? '#f9f9f9' : 'rgba(249, 249, 249, 0.7)' }}
+                    onMouseEnter={() => setHoveredLink(idx)}
+                    onMouseLeave={() => setHoveredLink(null)}
                   >
-                    <span className="w-0 group-hover:w-2 h-0.5 bg-blue-500 rounded-full mr-0 group-hover:mr-3 transition-all duration-300"></span>
+                    <span 
+                      className="h-0.5 rounded-full mr-0 transition-all duration-300"
+                      style={{
+                        width: hoveredLink === idx ? '8px' : '0px',
+                        marginRight: hoveredLink === idx ? '12px' : '0px',
+                        backgroundColor: '#faa61b'
+                      }}
+                    ></span>
                     {name}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -133,41 +104,97 @@ export default function Footer() {
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
             }`}
           >
-            <h3 className="text-white text-lg font-bold mb-6 flex items-center">
-              <span className="w-2 h-2 bg-purple-500 rounded-full mr-3 animate-pulse"></span>
+            <h3 className="text-lg font-bold mb-6 flex items-center" style={{ color: '#f9f9f9' }}>
+              <span className="w-2 h-2 rounded-full mr-3 animate-pulse" style={{ backgroundColor: '#faa61b' }}></span>
               Contact
             </h3>
             <ul className="space-y-4">
-              <li className="flex items-center space-x-3 text-sm text-gray-400">
+              <li className="flex items-center space-x-3 text-sm" style={{ color: 'rgba(249, 249, 249, 0.7)' }}>
                 <span>📧</span>
                 <a
                   href="mailto:dispatch@haulnova.com"
-                  className="hover:text-white transition-colors"
+                  className="transition-colors hover:opacity-100"
+                  style={{ color: 'inherit' }}
+                  onMouseEnter={(e) => e.target.style.color = '#f9f9f9'}
+                  onMouseLeave={(e) => e.target.style.color = 'rgba(249, 249, 249, 0.7)'}
                 >
                   dispatch@haulnova.com
                 </a>
               </li>
-              <li className="flex items-center space-x-3 text-sm text-gray-400">
+              <li className="flex items-center space-x-3 text-sm" style={{ color: 'rgba(249, 249, 249, 0.7)' }}>
                 <span>📞</span>
                 <span>(602) 529-6927</span>
               </li>
-              <li className="flex items-center space-x-3 text-sm text-gray-400">
+              <li className="flex items-center space-x-3 text-sm" style={{ color: 'rgba(249, 249, 249, 0.7)' }}>
                 <span>🌍</span>
                 <span>United States</span>
               </li>
             </ul>
           </div>
+
+          {/* Newsletter/CTA */}
+          <div
+            className={`transform transition-all duration-1000 delay-800 ${
+              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+            }`}
+          >
+            <h3 className="text-lg font-bold mb-6 flex items-center" style={{ color: '#f9f9f9' }}>
+              <span className="w-2 h-2 rounded-full mr-3 animate-pulse" style={{ backgroundColor: '#602fc9' }}></span>
+              Get Started
+            </h3>
+            <p className="text-sm mb-4" style={{ color: 'rgba(249, 249, 249, 0.7)' }}>
+              Ready to optimize your dispatch operations?
+            </p>
+            <button 
+              className="group px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg"
+              style={{ 
+                background: 'linear-gradient(135deg, #602fc9, #faa61b)',
+                color: '#f9f9f9'
+              }}
+            >
+              <span className="flex items-center">
+                Start Free Trial
+                <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
+              </span>
+            </button>
+          </div>
         </div>
 
         {/* Bottom Footer */}
         <div
-          className={`border-t border-gray-800 pt-8 transform transition-all duration-1000 delay-1000 ${
+          className={`border-t pt-8 transform transition-all duration-1000 delay-1000 ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}
+          style={{ borderColor: 'rgba(249, 249, 249, 0.1)' }}
         >
-          <div className="flex  items-center w-full !mx-auto gap-4 !text-center ">
-            <p className="text-gray-400 text-sm">© 2025 Haul Nova. All Rights Reserved.</p>
-           
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-sm" style={{ color: 'rgba(249, 249, 249, 0.7)' }}>
+              © 2025 Haul Nova. All Rights Reserved.
+            </p>
+            
+            {/* Trust badges */}
+            <div className="flex items-center space-x-6">
+              <div className="flex items-center space-x-2">
+                <div className="w-6 h-6 rounded-full flex items-center justify-center" style={{ backgroundColor: '#602fc9' }}>
+                  <span className="text-xs" style={{ color: '#f9f9f9' }}>🔒</span>
+                </div>
+                <span className="text-xs" style={{ color: 'rgba(249, 249, 249, 0.7)' }}>Secure</span>
+              </div>
+              
+              <div className="flex items-center space-x-2">
+                <div className="w-6 h-6 rounded-full flex items-center justify-center" style={{ backgroundColor: '#faa61b' }}>
+                  <span className="text-xs" style={{ color: '#f9f9f9' }}>⚡</span>
+                </div>
+                <span className="text-xs" style={{ color: 'rgba(249, 249, 249, 0.7)' }}>Fast</span>
+              </div>
+              
+              <div className="flex items-center space-x-2">
+                <div className="w-6 h-6 rounded-full flex items-center justify-center" style={{ backgroundColor: '#602fc9' }}>
+                  <span className="text-xs" style={{ color: '#f9f9f9' }}>🛟</span>
+                </div>
+                <span className="text-xs" style={{ color: 'rgba(249, 249, 249, 0.7)' }}>24/7 Support</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

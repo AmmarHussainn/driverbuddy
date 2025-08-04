@@ -23,8 +23,6 @@ export default function Pricing() {
         { text: "Standard integrations", icon: "🔗", highlight: false }
       ],
       buttonText: "Start Free Trial",
-      color: "from-blue-500 to-cyan-500",
-      bgColor: "bg-blue-50",
       popular: false,
       roi: "2x ROI in 3 months",
       callsPerDay: "~17 calls/day"
@@ -46,8 +44,6 @@ export default function Pricing() {
         { text: "Multi-user dashboard", icon: "👥", highlight: true }
       ],
       buttonText: "Start Free Trial",
-      color: "from-purple-500 to-pink-500",
-      bgColor: "bg-purple-50",
       popular: true,
       roi: "5x ROI in 2 months",
       callsPerDay: "~67 calls/day"
@@ -69,8 +65,6 @@ export default function Pricing() {
         { text: "24/7 priority support", icon: "🛟", highlight: true }
       ],
       buttonText: "Contact Sales",
-      color: "from-orange-500 to-red-500",
-      bgColor: "bg-orange-50",
       popular: false,
       roi: "10x ROI in 1 month",
       callsPerDay: "Unlimited calls/day"
@@ -95,28 +89,30 @@ export default function Pricing() {
   }, []);
 
   return (
-    <div ref={sectionRef} className="relative bg-gradient-to-br from-gray-50 via-purple-50 to-blue-50 py-24 overflow-hidden">
+    <div ref={sectionRef} className="relative py-24 overflow-hidden" style={{ backgroundColor: '#f9f9f9' }}>
       {/* Background Elements */}
-      <div className="absolute  inset-0">
-        {/* Value particles */}
-        {[...Array(25)].map((_, i) => (
+      <div className="absolute inset-0">
+        {/* Subtle particles */}
+        {[...Array(15)].map((_, i) => (
           <div
             key={i}
-            className="absolute bg-purple-400 bg-opacity-20 rounded-full animate-pulse"
+            className="absolute rounded-full animate-pulse"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
-              width: `${Math.random() * 6 + 2}px`,
-              height: `${Math.random() * 6 + 2}px`,
+              width: `${Math.random() * 4 + 2}px`,
+              height: `${Math.random() * 4 + 2}px`,
+              backgroundColor: '#602fc9',
+              opacity: 0.1,
               animationDelay: `${Math.random() * 3}s`,
               animationDuration: `${Math.random() * 4 + 3}s`
             }}
           />
         ))}
         
-        {/* Value gradient orbs */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
+        {/* Background orbs */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full mix-blend-multiply filter blur-3xl opacity-5 animate-blob" style={{ backgroundColor: '#602fc9' }}></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full mix-blend-multiply filter blur-3xl opacity-5 animate-blob animation-delay-2000" style={{ backgroundColor: '#faa61b' }}></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -125,27 +121,27 @@ export default function Pricing() {
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
           {/* Value Badge */}
-          <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-purple-100 to-pink-100 text-purple-800 text-sm font-bold mb-8">
+          <div className="inline-flex items-center px-6 py-3 rounded-full text-sm font-bold mb-8" style={{ backgroundColor: '#602fc9', color: 'white' }}>
             <svg className="w-5 h-5 mr-2 animate-bounce" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.293l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clipRule="evenodd" />
             </svg>
             MASSIVE VALUE & SAVINGS
           </div>
           
-          <h2 className="text-lg font-bold text-purple-600 uppercase tracking-wider mb-4">
+          <h2 className="text-lg font-bold uppercase tracking-wider mb-4" style={{ color: '#602fc9' }}>
             Investment Plans
           </h2>
           
-          <h1 className="text-5xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 mb-8 leading-tight">
+          <h1 className="text-5xl md:text-7xl font-black mb-8 leading-tight" style={{ color: '#252a31' }}>
             Affordable Plans to
             <br />
             <span className="text-4xl md:text-6xl">Scale Your Agency</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-medium">
-            Starting at just <span className="text-purple-600 font-bold">$500/month</span> for small agencies, 
-            with <span className="text-pink-600 font-bold">flexible plans</span> based on call volume. 
-            <span className="text-blue-600 font-bold">Try it free for 14 days</span> - no risk, massive rewards! 🚀
+          <p className="text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed font-medium" style={{ color: '#252a31' }}>
+            Starting at just <span className="font-bold" style={{ color: '#602fc9' }}>$500/month</span> for small agencies, 
+            with <span className="font-bold" style={{ color: '#faa61b' }}>flexible plans</span> based on call volume. 
+            <span className="font-bold" style={{ color: '#602fc9' }}>Try it free for 14 days</span> - no risk, massive rewards! 🚀
           </p>
         </div>
 
@@ -153,20 +149,20 @@ export default function Pricing() {
         <div className={`mb-16 transform transition-all duration-1000 delay-300 ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
         }`}>
-          <div className="bg-gradient-to-r from-green-600 to-emerald-500 rounded-3xl p-6 shadow-2xl text-center text-white">
+          <div className="rounded-3xl p-6 shadow-2xl text-center text-white" style={{ background: 'linear-gradient(135deg, #602fc9, #faa61b)' }}>
             <h3 className="text-2xl font-bold mb-4">💰 Average Customer Saves $5,000+ Monthly</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="text-center">
                 <div className="text-3xl font-black">75%</div>
-                <div className="text-green-100">Less Time Spent</div>
+                <div className="text-white/90">Less Time Spent</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-black">300%</div>
-                <div className="text-green-100">More Drivers</div>
+                <div className="text-white/90">More Drivers</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-black">500%</div>
-                <div className="text-green-100">ROI Increase</div>
+                <div className="text-white/90">ROI Increase</div>
               </div>
             </div>
           </div>
@@ -184,9 +180,12 @@ export default function Pricing() {
               } ${
                 plan.popular ? 'scale-105 lg:scale-110' : ''
               } ${
-                selectedPlan === plan.id ? 'ring-4 ring-purple-400 ring-opacity-50' : ''
+                selectedPlan === plan.id ? 'ring-4 ring-opacity-50' : ''
               }`}
-              style={{ transitionDelay: `${500 + index * 200}ms` }}
+              style={{ 
+                transitionDelay: `${500 + index * 200}ms`,
+                '--ring-color': selectedPlan === plan.id ? '#602fc9' : 'transparent'
+              }}
               onMouseEnter={() => setHoveredPlan(plan.id)}
               onMouseLeave={() => setHoveredPlan(null)}
               onClick={() => setSelectedPlan(plan.id)}
@@ -194,31 +193,34 @@ export default function Pricing() {
               {/* Popular Badge */}
               {plan.popular && (
                 <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 z-20">
-                  <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white text-sm font-bold px-6 py-2 rounded-full shadow-lg animate-pulse">
+                  <div className="text-white text-sm font-bold px-6 py-2 rounded-full shadow-lg animate-pulse" style={{ background: 'linear-gradient(135deg, #602fc9, #faa61b)' }}>
                     🔥 MOST POPULAR
                   </div>
                 </div>
               )}
 
               {/* Card */}
-              <div className={`relative ${plan.bgColor} rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border-2 ${
-                plan.popular ? 'border-purple-300' : 'border-white/50'
+              <div className={`relative bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border-2 ${
+                plan.popular ? 'border-opacity-30' : 'border-gray-200'
               } ${
-                hoveredPlan === plan.id ? 'border-purple-400' : ''
-              }`}>
+                hoveredPlan === plan.id ? 'border-opacity-50' : ''
+              }`}
+              style={{ 
+                borderColor: plan.popular || hoveredPlan === plan.id ? '#602fc9' : undefined
+              }}>
                 
                 {/* Background gradient overlay */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${plan.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-3xl`}></div>
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-3xl" style={{ background: 'linear-gradient(135deg, #602fc9, #faa61b)' }}></div>
                 
                 {/* Content */}
                 <div className="relative z-10">
                   {/* Plan Header */}
                   <div className="text-center mb-8">
-                    <h3 className="text-2xl font-bold text-gray-800 mb-2">{plan.name}</h3>
+                    <h3 className="text-2xl font-bold mb-2" style={{ color: '#252a31' }}>{plan.name}</h3>
                     <p className="text-gray-600 mb-4">{plan.description}</p>
                     
                     {/* Savings Badge */}
-                    <div className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-gradient-to-r ${plan.color} text-white mb-4`}>
+                    <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold text-white mb-4" style={{ background: 'linear-gradient(135deg, #602fc9, #faa61b)' }}>
                       💰 {plan.savings}
                     </div>
                   </div>
@@ -227,7 +229,7 @@ export default function Pricing() {
                   <div className="text-center mb-8">
                     <div className="flex items-center justify-center mb-2">
                       <span className="text-lg text-gray-400 line-through mr-3">{plan.originalPrice}</span>
-                      <span className={`text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r ${plan.color}`}>
+                      <span className="text-5xl font-black" style={{ color: plan.popular ? '#602fc9' : '#252a31' }}>
                         {plan.price}
                       </span>
                       <span className="text-lg text-gray-600 ml-1">{plan.period}</span>
@@ -235,7 +237,7 @@ export default function Pricing() {
                     
                     {/* ROI & Volume Info */}
                     <div className="space-y-2">
-                      <div className={`text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-r ${plan.color}`}>
+                      <div className="text-sm font-semibold" style={{ color: '#faa61b' }}>
                         {plan.roi}
                       </div>
                       <div className="text-xs text-gray-500">
@@ -245,26 +247,29 @@ export default function Pricing() {
                   </div>
 
                   {/* Features */}
-                  <div className="space-y-4  mb-8">
+                  <div className="space-y-4 mb-8">
                     {plan.features.map((feature, featureIndex) => (
                       <div
                         key={featureIndex}
                         className={`flex items-center space-x-3 p-2 rounded-lg transition-all duration-300 ${
-                          feature.highlight ? 'bg-white/50 shadow-sm' : ''
+                          feature.highlight ? 'bg-gray-50 shadow-sm' : ''
                         }`}
                       >
                         <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center ${
                           feature.highlight 
-                            ? `bg-gradient-to-r ${plan.color} text-white shadow-lg` 
-                            : 'bg-white text-gray-600 shadow-sm'
-                        }`}>
+                            ? 'text-white shadow-lg' 
+                            : 'bg-gray-100 text-gray-600 shadow-sm'
+                        }`}
+                        style={{ 
+                          background: feature.highlight ? '#faa61b' : undefined
+                        }}>
                           <span className="text-sm">{feature.icon}</span>
                         </div>
-                        <span className={`text-gray-700 ${feature.highlight ? 'font-semibold' : ''}`}>
+                        <span className={`${feature.highlight ? 'font-semibold' : ''}`} style={{ color: '#252a31' }}>
                           {feature.text}
                         </span>
                         {feature.highlight && (
-                          <span className="ml-auto text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full font-bold">
+                          <span className="ml-auto text-xs px-2 py-1 rounded-full font-bold" style={{ backgroundColor: '#faa61b', color: 'white' }}>
                              Premium
                           </span>
                         )}
@@ -273,11 +278,14 @@ export default function Pricing() {
                   </div>
 
                   {/* CTA Button */}
-                  <button className={`group/btn relative w-full py-4 px-6 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 overflow-hidden ${
-                    plan.popular 
-                      ? `bg-gradient-to-r ${plan.color} text-white shadow-xl hover:shadow-2xl` 
-                      : 'bg-white text-gray-800 border-2 border-gray-300 hover:border-purple-400 shadow-lg hover:shadow-xl'
-                  }`}>
+                  <button className={`group/btn relative w-full py-4 px-6 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 overflow-hidden shadow-lg hover:shadow-xl`}
+                  style={{
+                    background: plan.popular 
+                      ? 'linear-gradient(135deg, #602fc9, #faa61b)' 
+                      : 'white',
+                    color: plan.popular ? 'white' : '#252a31',
+                    border: plan.popular ? 'none' : '2px solid #602fc9'
+                  }}>
                     <span className="relative z-10 flex items-center justify-center space-x-2">
                       <span>{plan.buttonText}</span>
                       {plan.buttonText === "Start Free Trial" && (
@@ -312,32 +320,32 @@ export default function Pricing() {
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
           <div className="bg-white rounded-3xl p-8 shadow-2xl border border-gray-200">
-            <h3 className="text-2xl font-bold text-gray-800 mb-6">
+            <h3 className="text-2xl font-bold mb-6" style={{ color: '#252a31' }}>
               🛡️ Our Ironclad Guarantees
             </h3>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
               <div className="space-y-3">
-                <div className="w-16 h-16 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full flex items-center justify-center mx-auto">
+                <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto text-white" style={{ background: 'linear-gradient(135deg, #602fc9, #faa61b)' }}>
                   <span className="text-2xl">✅</span>
                 </div>
-                <h4 className="font-bold text-gray-800">14-Day Free Trial</h4>
+                <h4 className="font-bold" style={{ color: '#252a31' }}>14-Day Free Trial</h4>
                 <p className="text-gray-600 text-sm">No setup or cancellation fees</p>
               </div>
               
               <div className="space-y-3">
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full flex items-center justify-center mx-auto">
+                <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto text-white" style={{ background: 'linear-gradient(135deg, #602fc9, #faa61b)' }}>
                   <span className="text-2xl">⚡</span>
                 </div>
-                <h4 className="font-bold text-gray-800">Scale Up or Down</h4>
+                <h4 className="font-bold" style={{ color: '#252a31' }}>Scale Up or Down</h4>
                 <p className="text-gray-600 text-sm">Change plans anytime</p>
               </div>
               
               <div className="space-y-3">
-                <div className="w-16 h-16 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full flex items-center justify-center mx-auto">
+                <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto text-white" style={{ background: 'linear-gradient(135deg, #602fc9, #faa61b)' }}>
                   <span className="text-2xl">💎</span>
                 </div>
-                <h4 className="font-bold text-gray-800">Money-Back Guarantee</h4>
+                <h4 className="font-bold" style={{ color: '#252a31' }}>Money-Back Guarantee</h4>
                 <p className="text-gray-600 text-sm">30-day satisfaction guarantee</p>
               </div>
             </div>
