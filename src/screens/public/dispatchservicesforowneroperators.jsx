@@ -2,8 +2,8 @@ import React from 'react'
 
 import FleetPrioritySection from '../../components/FleetPrioritySection'
 import Images from '../../assets/Images'
-import Navbar from '../../components/navbar';
-import Footer from '../../components/footer';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
 
 const Dispatchservicesforowneroperators = () => {
     const fleetPriorityData = {
