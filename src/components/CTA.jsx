@@ -87,7 +87,7 @@ export default function CTA() {
           {/* Subtitle */}
           <p className={`text-xl sm:text-2xl max-w-4xl mx-auto mb-12 leading-relaxed transform transition-all duration-1000 delay-400 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
           style={{ color: '#f9f9f9' }}>
-            Join <span className="font-semibold" style={{ color: '#602fc9' }}>2,500+</span> agencies using AI to 
+           Join us and use  AI to 
             <span className="relative inline-block mx-2">
               <span className="font-bold" style={{ 
                 background: 'linear-gradient(135deg, #faa61b, #602fc9)',
