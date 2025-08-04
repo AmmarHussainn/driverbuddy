@@ -64,24 +64,35 @@ export default function Solution() {
     }
   ];
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          animateNumbers();
-          startFeatureRotation();
-        }
-      },
-      { threshold: 0.3 }
-    );
+ useEffect(() => {
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        setIsVisible(true);
+        animateNumbers();
+        startFeatureRotation();
+      }
+    },
+    { threshold: 0.3 }
+  );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+  const currentRef = sectionRef.current;
 
-    return () => observer.disconnect();
-  }, []);
+  if (currentRef) {
+    observer.observe(currentRef);
+  }
+
+  // Mobile fallback: force visible state on small screens
+  if (window.innerWidth < 768) {
+    setIsVisible(true);
+    animateNumbers();
+    startFeatureRotation();
+  }
+
+  return () => {
+    if (currentRef) observer.unobserve(currentRef);
+  };
+}, []);
 
   const animateNumbers = () => {
     solutionFeatures.forEach((feature) => {
