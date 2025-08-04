@@ -1,9 +1,10 @@
 import React from 'react';
-import Navbar from '../../components/navbar';
-import Footer from '../../components/footer';
+
 import FleetPrioritySection from '../../components/FleetPrioritySection';
 
 import Images from '../../assets/Images';
+import Navbar from '../../components/navbar';
+import Footer from '../../components/footer';
 
 const Dispatchfortruckingcompanies = () => {
 

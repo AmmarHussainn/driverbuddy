@@ -1,9 +1,9 @@
 import React from 'react'
-import Navbar from '../../components/navbar'
-import Footer from '../../components/footer'
 
 import FleetPrioritySection from '../../components/FleetPrioritySection'
 import Images from '../../assets/Images'
+import Navbar from '../../components/navbar';
+import Footer from '../../components/footer';
 
 const Dispatchservicesforowneroperators = () => {
     const fleetPriorityData = {
@@ -38,7 +38,7 @@ const Dispatchservicesforowneroperators = () => {
       };
   return (
    <>
-    <Navbar />
+    <Navbar/>
       <div className='  px-6 py-30 bg-[#efeff1] md:px-16'>
         <h2 className='text-4xl font-bebas font-bold text-center mt-20'>
         Dispatch services for owner operators
@@ -52,9 +52,9 @@ const Dispatchservicesforowneroperators = () => {
       </div>
       <FleetPrioritySection data={fleetPriorityData}/>
 
-
+   <Footer/>
      
-      <Footer />
+      
    </>
   )
 }
