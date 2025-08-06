@@ -30,7 +30,7 @@ export default function Pricing() {
     {
       id: 1,
       name: "Growth",
-      price: "$399",
+      price: "$799",
       period: "/month",
       description: "Growing agencies",
       userRange: "Up to 10 users",
